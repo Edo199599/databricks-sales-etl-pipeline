@@ -14,10 +14,10 @@ Risultati Fase 1
 - **Fondamenta** per automazione futura
 
 
-## 🛠️ Architettura Implementata
-- **🥉 Bronze**: Dati grezzi da sistema vendite
-- **🥈 Silver**: Dati puliti con controlli qualità
-- **🥇 Gold**: Business analytics (prossima fase)
+## Architettura Implementata
+- ** Bronze**: Dati grezzi da sistema vendite
+- ** Silver**: Dati puliti con controlli qualità
+- ** Gold**: Business analytics (prossima fase)
 
 
 ## Status Progetto
