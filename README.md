@@ -18,3 +18,15 @@ Risultati Fase 1
 - **🥉 Bronze**: Dati grezzi da sistema vendite
 - **🥈 Silver**: Dati puliti con controlli qualità
 - **🥇 Gold**: Business analytics (prossima fase)
+
+
+## Status Progetto
+- ✅ **Notebook 1**: Setup & Data Ingestion (BRONZE/SILVER)
+- ✅ **Notebook 2**: Business Transformations (GOLD)
+- **Notebook 3**: Scheduling & Automation - In sviluppo
+
+## Risultati Fase 2 (Notebook 2)
+- **3 tabelle Gold** create
+- **KPI dashboard** business-ready
+- **Aggregazioni** categoria/città
+- **Grafici interattivi** implementati
