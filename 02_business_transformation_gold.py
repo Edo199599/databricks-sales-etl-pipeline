@@ -66,13 +66,13 @@ df_citta.show()
 
 # COMMAND ----------
 
-df_categoria.write.format("delta").mode("overwrite").saveAsTable("gold_category_analystics")
-df_citta.write.format("delta").mode("overwrite").saveAsTable("gold_city_analystics")
+df_categoria.write.format("delta").mode("overwrite").saveAsTable("gold_category_analytics")
+df_citta.write.format("delta").mode("overwrite").saveAsTable("gold_city_analytics")
 kpi_data.write.format("delta").mode("overwrite").saveAsTable("gold_kpi_summary")
 
 print("Tabelle Gold Salvate:")
-print("- gold_category_analystics")
-print("- gold_city_analystics")
+print("- gold_category_analytics")
+print("- gold_city_analytics")
 print("- gold_kpi_summary")
 
 # COMMAND ----------
