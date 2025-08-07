@@ -116,12 +116,14 @@ def daily_pipeline():
 
     kpi_data.write.format("delta").mode("overwrite").saveAsTable("gold_kpi_summary") 
 
-    df_categoria = df_silver.groupBy("category").agg(count("*").alias("ordini"), round(sum("total_amount"),2).alias("fatturato"), round(avg("total_amount"),2).alias("ordine_medio")).orderBy(desc("fatturato"))
-
-    df_categoria.write.format("delta").mode("overwrite").saveAsTable("gold_category_amalystics")
     print(f"Gold: KPI aggiornati")
 
-    df_citta = df_silver.groupBy("city").agg(count("*").alias("ordini"), round(sum("total_amount"), 2).alias("fatturato"), countDistinct("customer_id").alias("clienti_unici")).orderBy(desc("fatturato"))
+    df_categoria = df_silver.groupBy("category").agg(count("*").alias("ordini"), round(sum("total_amount"),2).alias("fatturato"), round(avg("total_amount"),2).alias("ordine_medio"), countDistinct("customer_id").alias("clienti_unici")).orderBy(desc("fatturato"))
+
+    df_categoria.write.format("delta").mode("overwrite").option("mergeSchema", "true").saveAsTable("gold_category_analytics")
+    
+
+    df_citta = df_silver.groupBy("city").agg(count("*").alias("ordini"), round(sum("total_amount"), 2).alias("fatturato"), round(avg("total_amount"),2).alias("ordine_medio"), countDistinct("customer_id").alias("clienti_unici")).orderBy(desc("fatturato"))
     df_citta.write.format("delta").mode("overwrite").saveAsTable("gold_city_analytics")
 
     return df_silver.count()
